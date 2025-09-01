@@ -57,6 +57,7 @@
         <label title="When you download, include the grid lines on the exported image."><input id="dlGrid" type="checkbox" checked/> Include grid in download</label>
         <button id="download">Download PNG</button>
       </div>
+      <div style="opacity:.7;font-size:12px">Yuqing's tool for creating a cool pixel-style logo... May turn into a knitting pattern generator some day...?</div>
       <div style="opacity:.7;font-size:12px">Tips: Click‑drag to paint. Use “Eraser mode” to remove pixels. Nothing is saved. Reloading gives you a blank page. Have Fun!</div>
     </section>
 
@@ -233,7 +234,7 @@
       }
       // Draw the paint layer image. paintEl is HiDPI‑scaled, so drawImage with source size in CSS pixels
       const srcW = paintEl.width / DPR, srcH = paintEl.height / DPR;
-      ctx.drawImage(paintEl, 0, 0, srcW, srcH, 0, 0, out.width, out.height);
+      ctx.drawImage(paintEl, 0, 0, paintEl.width, paintEl.height, 0, 0, out.width, out.height);
 
       const url = out.toDataURL('image/png');
       const a = document.createElement('a');
